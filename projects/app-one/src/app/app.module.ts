@@ -11,6 +11,7 @@ import { HomePageModule } from './pages/home-page/home-page.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+
     // pages
     HomePageModule
   ],
