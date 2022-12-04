@@ -16,5 +16,7 @@ RUN npm run build:app-two
 
 FROM nginx:latest as server
 
+RUN mkdir /etc/nginx/templates
 COPY projects/app-two/nginx.conf /etc/nginx/nginx.conf
+COPY projects/app-two/default.conf.template /etc/nginx/templates
 COPY --from=build /app/dist/app-two/. /usr/share/nginx/html

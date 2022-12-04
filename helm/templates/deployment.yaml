@@ -4,6 +4,7 @@ metadata:
   name: {{ include "helm.fullname" . }}
   labels:
     {{- include "helm.labels" . | nindent 4 }}
+    date: "{{ now | unixEpoch }}"
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
