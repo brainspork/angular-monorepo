@@ -1,0 +1,12 @@
+<h2>Monsters</h2>
+<ng-container *ngIf="!(response | async)">
+  <p>...loading</p>
+</ng-container>
+<ng-container *ngIf="response | async">
+  <p>Monster count: {{(response | async)?.count || 0}}</p>
+  <ul>
+    <li *ngFor="let monster of (response | async)?.results">
+      <a [href]="monster.url">{{monster.name}}</a>
+    </li>
+  </ul>
+</ng-container>

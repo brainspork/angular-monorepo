@@ -1,0 +1,11 @@
+.banner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #c52028;
+  padding: 0 10px;
+
+  .logo {
+    color: #fff;
+  }
+}

@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BannerModule } from 'projects/shared-library/src/public-api';
+import { BannerModule, DndModule } from 'projects/shared-library/src/public-api';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageModule } from './pages/home-page/home-page.module';
+import { MonstersPageModule } from './pages/monsters-page/monsters-page.module';
 
 @NgModule({
   declarations: [
@@ -13,9 +14,11 @@ import { HomePageModule } from './pages/home-page/home-page.module';
     BrowserModule,
     AppRoutingModule,
     BannerModule,
+    DndModule,
 
     // pages
-    HomePageModule
+    HomePageModule,
+    MonstersPageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
