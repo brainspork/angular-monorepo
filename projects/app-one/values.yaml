@@ -1,7 +1,7 @@
 image:
   registry: anthonykonschuh
   repository: anthonykonschuh/app-one
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
 
