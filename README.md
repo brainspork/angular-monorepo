@@ -55,8 +55,8 @@ Helm charts can be run locally using minikube. Running them this way makes debug
 2. Install [k9s](https://k9scli.io/topics/install/) (if desired)
 3. Enable minikube ingress with `minikube addons enable ingress`
 4. Start minikube with `minikube start`
-5. Update your hosts file with a map of 127.0.0.1 to your chosen host (minikube.test in the current repo)
+5. Update your hosts file with a map of 127.0.0.1 to your chosen host (monorepo.test in the current repo)
 6. Run `minikube tunnel` and keep the terminal open
 7. Run docker build, tag, push commands from `package.json`
 8. Run helm upgrade commands from `package.json`
-9. Visit your site (minikube.test/one/)
+9. Visit your site (monorepo.test/one/)
