@@ -1,11 +1,11 @@
 {
-  "/dnd/api/*": {
+  "/dndservice*": {
     "target": "https://www.dnd5eapi.co",
     "secure": false,
     "changeOrigin": true,
     "logLevel": "debug",
     "pathRewrite": {
-      "^/dnd/api": "/api"
+      "^/dndservice": "/api"
     }
   }
 }

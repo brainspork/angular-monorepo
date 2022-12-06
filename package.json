@@ -17,8 +17,9 @@
     "docker-tag:app-two": "docker image tag app-two:latest anthonykonschuh/app-two:latest",
     "docker-push:app-one": "npm run docker-tag:app-one && docker image push anthonykonschuh/app-one:latest",
     "docker-push:app-two": "npm run docker-tag:app-two && docker image push anthonykonschuh/app-two:latest",
-    "helm-upgrade:app-one": "helm upgrade --install app-one -f ./helm/values.yaml -f ./projects/app-one/values.yaml ./helm",
-    "helm-upgrade:app-two": "helm upgrade --install app-two -f ./helm/values.yaml -f ./projects/app-two/values.yaml ./helm"
+    "helm-upgrade:angular-monorepo": "helm upgrade --install angular-monorepo --create-namespace --namespace angular-monorepo ./helm/angular-monorepo",
+    "helm-upgrade:app-one": "npm run helm-upgrade:angular-monorepo && helm upgrade --install app-one --namespace angular-monorepo ./helm/app-one",
+    "helm-upgrade:app-two": "npm run helm-upgrade:angular-monorepo && helm upgrade --install app-two --namespace angular-monorepo ./helm/app-two"
   },
   "private": true,
   "dependencies": {

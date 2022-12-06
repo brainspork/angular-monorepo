@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: proxy-service-dnd5eapi
+spec:
+  type: ExternalName
+  sessionAffinity: None
+  externalName: dnd5eapi.co
+  ports:
+  - port: 443

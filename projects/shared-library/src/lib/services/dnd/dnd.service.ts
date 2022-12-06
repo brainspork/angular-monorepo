@@ -17,6 +17,6 @@ export class DndService {
   ) { }
 
   public getMonsters(): Observable<GetMonstersResponse> {
-    return this.client.get<GetMonstersResponse>('/dnd/api/monsters', { observe: 'body', responseType: 'json' });
+    return this.client.get<GetMonstersResponse>('/dndservice/monsters', { observe: 'body', responseType: 'json' });
   }
 }
