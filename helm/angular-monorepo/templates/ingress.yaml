@@ -5,8 +5,7 @@ metadata:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/rewrite-target: /api/$2
     nginx.ingress.kubernetes.io/upstream-vhost: dnd5eapi.co
-    nginx.ingress.kubernetes.io/backend-protocol: HTTPS
-    app.kubernetes.io/instance: angular-monorepo
+    nginx.ingress.kubernetes.io/backend-protocol: HTTP
   name: proxy-ingress-dnd5eapi
 spec:
   rules:
@@ -17,6 +16,6 @@ spec:
             service:
               name: proxy-service-dnd5eapi
               port:
-                number: 443
+                number: 80 # must be 80 instead of 443 when using HTTP
           path: /dndservice(/|$)(.*)
           pathType: Prefix

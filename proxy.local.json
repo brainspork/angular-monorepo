@@ -1,5 +1,5 @@
 {
-  "/dndservice*": {
+  "/dndservice/*": {
     "target": "https://www.dnd5eapi.co",
     "secure": false,
     "changeOrigin": true,
