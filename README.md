@@ -38,17 +38,15 @@ This project was created to show how to set up an angular monorepo with discrete
 6. For local development convenience add docker build, tag, and push scripts to `package.json`
 
 ### Set up helm
-1. From the monorepo root, run `helm create helm` to generate a helm chart
-2. Update the applications `name` in `helm/Chart.yaml`
-3. Update the `service.selector.app` in `helm/values.yaml`
-4. Enable ingress
+1. From the monorepo root, create a `helm` directory
+2. Run `helm create` for each application
+3. Run `helm create` for shared resources (angular-monorepo)
+4. Enable ingress for each app
     - Change `ingress.enabled` to `true` in `helm/values.yaml`
     - Add `kubernetes.io/ingress.class: nginx` annotation to `ingress.annotations` in `helm/values.yaml`
-5. Add `values.yaml` file to app-one and app-two projects
+    - Add `host` and `paths` for each app
 6. Set up app specific image pull and ingress variables
 7. For local development convenience add helm upgrade scripts to `package.json`
-    - you must add `-f ./helm/values.yaml` followed by `-f ./projects/app-*/values.yaml` in the upgrade command so the application's values override the defaults
-    - the `--install app-*` command will install the chart if it doesn't exist. It will also add app-* instance labels and other clarifying info on top of the default `angular-monorepo` chart application name
 
 ## Local Development
 Helm charts can be run locally using minikube. Running them this way makes debugging charts a little easier. k9s is also a helpful tool for monitoring your minikube cluster. These instructions assume you have already done the [monorepo setup steps](#Setup)
